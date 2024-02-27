@@ -40,12 +40,30 @@ namespace E_project_book_mangement_system.Controllers
             sc.registers.Add(ins);
             sc.SaveChanges();
             ModelState.Clear();
-            return View();
+            return RedirectToAction("dashboard", "Admin");
 
         }
         public IActionResult login()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult login( Register rm)
+        {
+ var  user = sc.registers.Where(a=>a.email == rm.email && a.password == rm.password).FirstOrDefault();
+            if(user != null)
+            {
+                HttpContext.Session.SetString("user", rm.email);
+                var userdetail = HttpContext.Session.GetString("user");
+                ViewBag.detail = userdetail;
+                return View("~/Views/Admin/dashboard.cshtml");
+
+            }
+            else
+            {
+                return RedirectToAction("login");
+            }
+
         }
         public IActionResult shop()
         {
@@ -56,15 +74,16 @@ namespace E_project_book_mangement_system.Controllers
             return View();
         }
         public IActionResult wishlist()
-        {
+        {   
 
             return View();
         }
         
-        public IActionResult productlist()
+        public IActionResult productdetail()
         {
             return View();
         }
+        
 
     }
 }

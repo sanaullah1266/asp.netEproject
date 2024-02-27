@@ -1,59 +1,36 @@
-﻿
+﻿@model E_project_book_mangement_system.Models.Register
+
 @{
     ViewData["Title"] = "login";
     Layout = "~/Views/Shared/headerfooter.cshtml";
 }
 
+<h1>login</h1>
 
-<div class="breadcrumbs-area mb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumbs-menu">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="active">login</a></li>
-                    </ul>
-                </div>
+<h4>Register</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
             </div>
-        </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
-<!-- breadcrumbs-area-end -->
-<!-- user-login-area-start -->
-<div class="user-login-area mb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="login-title text-center mb-30">
-                    <h2>Login</h2>
-                    <p>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br>inventore veritatis et quasi architecto beat</p>
-                </div>
-            </div>
-            <div class="offset-lg-3 col-lg-6 col-md-12 col-12">
-                <div class="login-form">
-                    <div class="single-login">
-                        <label>Username or email<span>*</span></label>
-                        <input type="text" />
-                    </div>
-                    <div class="single-login">
-                        <label>Passwords <span>*</span></label>
-                        <input type="text" />
-                    </div>
-                    <div class="single-login single-login-2">
-                        <a href="#">login</a>
-                        <input id="rememberme" type="checkbox" name="rememberme" value="forever">
-                        <span>Remember me</span>
-                    </div>
-                    <a href="#">Lost your password?</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
-<!-- user-login-area-end -->
-<!-- footer-area-start -->
-
-    <!-- footer-top-start -->
-
 

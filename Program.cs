@@ -11,6 +11,9 @@ builder.Services.AddDbContext<SqlContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("dbcon"));
 });
 
+builder.Services.AddSession(options => {
+    options.IdleTimeout = TimeSpan.FromMinutes(30);//You can set Time
+});
 
 var app = builder.Build();
 
@@ -31,6 +34,8 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=User}/{action=register}/{id?}");
+    pattern: "{controller=User}/{action=login}/{id?}");
+
+app.UseSession();
 
 app.Run();

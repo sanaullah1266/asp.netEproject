@@ -1,42 +1,163 @@
-﻿@model E_project_book_mangement_system.Models.Register
-
+﻿ @model E_project_book_mangement_system.Models.Register
 @{
     ViewData["Title"] = "register";
     Layout = "~/Views/Shared/headerfooter.cshtml";
 }
 
-<h1>register</h1>
 
-<h4>Register</h4>
-<hr />
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
+<!-- header-area-end -->
+<!-- breadcrumbs-area-start -->
+<div class="breadcrumbs-area mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumbs-menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#" class="active">register</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="password" class="control-label"></label>
-                <input asp-for="password" class="form-control" />
-                <span asp-validation-for="password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
+<!-- breadcrumbs-area-end -->
+<!-- user-login-area-start -->
+<div class="user-login-area mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="login-title text-center mb-30">
+                    <h2>Sign Up</h2>
+                    <p>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br>inventore veritatis et quasi architecto beat</p>
+                </div>
+            </div>
+            <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+                <div class="billing-fields">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="single-register">
+                                <form asp-action="register">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <label asp-for="name">Name<span>*</span></label>
+                                    <input asp-for="name" type="text" />
+                                    <span asp-validation-for="name" class="text-danger"></span>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+                                    <label asp-for="email">Email<span>*</span></label>
+                                    <input asp-for="email" type="email" />    
+                                    <span asp-validation-for="email" class="text-danger"></span>
+                                   
+                                    <label asp-for="password">Password<span>*</span></label>
+                                    <input asp-for="password" type="password" />
+                                    <span asp-validation-for="password" class="text-danger"></span>
+
+                             
+                    <div class="single-register mt-3">
+                                        <input type="submit" value="Register" class="btn btn-primary" />
+
+                    </div>
+                                </form>
+                            </div>
+                        </div>
+                                  
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- user-login-area-end -->
+<!-- footer-area-start -->
+<footer>
+    <!-- footer-top-start -->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-top-menu bb-2">
+                        <nav>
+                            <ul>
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">Enable Cookies</a></li>
+                                <li><a href="#">Privacy and Cookie Policy</a></li>
+                                <li><a href="#">contact us</a></li>
+                                <li><a href="#">blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-top-start -->
+    <!-- footer-mid-start -->
+    <div class="footer-mid ptb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="single-footer br-2 xs-mb">
+                                <div class="footer-title mb-20">
+                                    <h3>Products</h3>
+                                </div>
+                                <div class="footer-mid-menu">
+                                    <ul>
+                                        <li><a href="about.html">About us</a></li>
+                                        <li><a href="#">Prices drop </a></li>
+                                        <li><a href="#">New products</a></li>
+                                        <li><a href="#">Best sales</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="single-footer br-2 xs-mb">
+                                <div class="footer-title mb-20">
+                                    <h3>Our company</h3>
+                                </div>
+                                <div class="footer-mid-menu">
+                                    <ul>
+                                        <li><a href="contact.html">Contact us</a></li>
+                                        <li><a href="#">Sitemap</a></li>
+                                        <li><a href="#">Stores</a></li>
+                                        <li><a href="register.html">My account </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="single-footer br-2 xs-mb">
+                                <div class="footer-title mb-20">
+                                    <h3>Your account</h3>
+                                </div>
+                                <div class="footer-mid-menu">
+                                    <ul>
+                                        <li><a href="contact.html">Addresses</a></li>
+                                        <li><a href="#">Credit slips </a></li>
+                                        <li><a href="#"> Orders</a></li>
+                                        <li><a href="#">Personal info</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="single-footer mrg-sm">
+                        <div class="footer-title mb-20">
+                            <h3>STORE INFORMATION</h3>
+                        </div>
+                        <div class="footer-contact">
+                            <p class="adress">
+                                <span>My Company</span> Your address goes here.
+                            </p>
+                            <p><span>Call us now:</span> 0123456789</p>
+                            <p><span>Email:</span> demo@example.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
